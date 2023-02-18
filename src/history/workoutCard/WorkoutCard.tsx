@@ -1,3 +1,5 @@
+import "./index.css";
+
 type Set = {
   repsCount: number;
   weight: number;
@@ -11,9 +13,9 @@ type Exercise = {
 };
 
 type Workout = {
-  exercises: Exercise[];
-  date: Date;
-  duration: Date;
+  exercises?: Exercise[];
+  date?: Date;
+  duration?: Date;
   title: string;
 };
 
@@ -21,10 +23,6 @@ type Props = {
   workout: Workout;
 };
 
-export const WorkoutCard: React.FC<Props> = ({workout}) => {
-  return (
-    <div>
-      {workout.title}
-    </div>
-  )
+export const WorkoutCard: React.FC<Props> = ({ workout }) => {
+  return <div className="workout-card">{workout.title}</div>;
 };

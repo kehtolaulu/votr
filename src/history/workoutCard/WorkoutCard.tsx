@@ -14,7 +14,7 @@ type Exercise = {
 
 type Workout = {
   exercises?: Exercise[];
-  date?: string;
+  createdAt?: Date;
   duration?: string;
   title: string;
 };
@@ -25,11 +25,12 @@ type Props = {
 
 export const WorkoutCard: React.FC<Props> = ({ workout }) => {
   return (
-    <div className="workout-card">
+    <article className="workout-card">
       <p className="workout-card__title">{workout.title}</p>
-      <p className="workout-card__date">{workout.date}</p>
+      <p className="workout-card__date">{workout.createdAt?.toDateString()}</p>
       <p className="workout-card__duration">
         <img
+          alt="schedule icon"
           src={`${process.env.PUBLIC_URL}/schedule.svg`}
           style={{ height: "20px", marginRight: "4px" }}
         />
@@ -41,6 +42,6 @@ export const WorkoutCard: React.FC<Props> = ({ workout }) => {
           <span>{exercise.setsCount}</span> x <span>{exercise.name}</span>
         </p>
       ))}
-    </div>
+    </article>
   );
 };

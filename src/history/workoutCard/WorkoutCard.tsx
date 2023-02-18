@@ -9,13 +9,13 @@ type Set = {
 type Exercise = {
   name: string;
   setsCount: number;
-  bestSet: Set;
+  bestSet?: Set;
 };
 
 type Workout = {
   exercises?: Exercise[];
-  date?: Date;
-  duration?: Date;
+  date?: string;
+  duration?: string;
   title: string;
 };
 
@@ -24,5 +24,16 @@ type Props = {
 };
 
 export const WorkoutCard: React.FC<Props> = ({ workout }) => {
-  return <div className="workout-card">{workout.title}</div>;
+  return (
+    <div className="workout-card">
+      <p>{workout.title}</p>
+      <p>{workout.date}</p>
+      <p>{workout.duration}</p>
+      {workout.exercises?.map((exercise) => (
+        <div>
+          <span>{exercise.setsCount}</span> x <span>{exercise.name}</span>
+        </div>
+      ))}
+    </div>
+  );
 };

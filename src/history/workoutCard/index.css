@@ -3,8 +3,22 @@
   border-radius: 4px;
   padding: 12px;
   margin: 8px;
+  text-align: left;
 }
 
 .workout-card p {
-  margin: 0;
+  margin: 4px 0;
+}
+
+.workout-card__title {
+  font-weight: 600;
+}
+
+.workout-card__date {
+  color: #333333;
+}
+
+.workout-card__duration {
+  color: #333333;
+  display: flex;
 }

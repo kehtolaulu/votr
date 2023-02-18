@@ -26,14 +26,20 @@ type Props = {
 export const WorkoutCard: React.FC<Props> = ({ workout }) => {
   return (
     <div className="workout-card">
-      <p>{workout.title}</p>
-      <p>{workout.date}</p>
-      <p>{workout.duration}</p>
-      <hr />
+      <p className="workout-card__title">{workout.title}</p>
+      <p className="workout-card__date">{workout.date}</p>
+      <p className="workout-card__duration">
+        <img
+          src={`${process.env.PUBLIC_URL}/schedule.svg`}
+          style={{ height: "20px", marginRight: "4px" }}
+        />
+        {workout.duration}
+      </p>
+      <br />
       {workout.exercises?.map((exercise) => (
-        <div>
+        <p>
           <span>{exercise.setsCount}</span> x <span>{exercise.name}</span>
-        </div>
+        </p>
       ))}
     </div>
   );

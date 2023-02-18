@@ -2,4 +2,9 @@
   border: 1px solid gray;
   border-radius: 4px;
   padding: 12px;
+  margin: 8px;
+}
+
+.workout-card p {
+  margin: 0;
 }

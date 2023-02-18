@@ -29,6 +29,7 @@ export const WorkoutCard: React.FC<Props> = ({ workout }) => {
       <p>{workout.title}</p>
       <p>{workout.date}</p>
       <p>{workout.duration}</p>
+      <hr />
       {workout.exercises?.map((exercise) => (
         <div>
           <span>{exercise.setsCount}</span> x <span>{exercise.name}</span>

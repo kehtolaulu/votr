@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -6,31 +5,23 @@ import {
 
 import './App.css';
 
+import { History } from './history';
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    ),
+    element: <History />,
+  },
+  {
+    path: '/history',
+    element: <History />,
   },
 ]);
 
 const App = (): JSX.Element => (
-  <RouterProvider router={router} />
+  <main className="App">
+    <RouterProvider router={router} />
+  </main>
 );
 
 export default App;

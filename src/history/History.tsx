@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 import { Database } from '../persistance';
 import { WorkoutCard } from './workoutCard';
 
